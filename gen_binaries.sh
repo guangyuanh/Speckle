@@ -85,12 +85,12 @@ if [ "$compileFlag" = true ]; then
       if [ $b == "483.xalancbmk" ]; then 
          SHORT_EXE=Xalan #WTF SPEC???
       fi
-      BMK_DIR=$SPEC_DIR/benchspec/CPU2006/$b/run/run_base_${INPUT_TYPE}_${CONFIG}.0000;
+      BMK_DIR=$SPEC_DIR/benchspec/CPU2006/$b/run/build_base_${CONFIG}.0000;
       
       echo ""
       echo "ls $SPEC_DIR/benchspec/CPU2006/$b/run"
       ls $SPEC_DIR/benchspec/CPU2006/$b/run
-      ls $SPEC_DIR/benchspec/CPU2006/$b/run/run_base_${INPUT_TYPE}_${CONFIG}.0000
+      ls $SPEC_DIR/benchspec/CPU2006/$b/run/build_base_${CONFIG}.0000
       echo ""
 
       # make a symlink to SPEC (to prevent data duplication for huge input files)
