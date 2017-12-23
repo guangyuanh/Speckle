@@ -18,9 +18,10 @@ CMD_FILE=commands.txt
 INPUT_TYPE=test
 
 # the integer set
-BENCHMARKS=(400.perlbench 401.bzip2 403.gcc 429.mcf 445.gobmk 456.hmmer 458.sjeng 462.libquantum 464.h264ref 471.omnetpp 473.astar 483.xalancbmk)
+# BENCHMARKS=(400.perlbench 401.bzip2 403.gcc 429.mcf 445.gobmk 456.hmmer 458.sjeng 462.libquantum 464.h264ref 471.omnetpp 473.astar 483.xalancbmk)
 # Guangyuan for xalancbmk failure Nov14,2017 5pm
 #BENCHMARKS=(400.perlbench 401.bzip2 403.gcc 429.mcf 445.gobmk 456.hmmer 458.sjeng 462.libquantum 464.h264ref 471.omnetpp 473.astar)
+BENCHMARKS=(462.libquantum)
 
 # idiomatic parameter and option handling in sh
 compileFlag=false
@@ -115,7 +116,8 @@ if [ "$compileFlag" = true ]; then
                cp $f $COPY_DIR/$b/$(basename "$f")
             fi
          done
-         mv $COPY_DIR/$b/${SHORT_EXE}_base.${CONFIG} $COPY_DIR/$b/${SHORT_EXE}
+         #mv $COPY_DIR/$b/${SHORT_EXE}_base.${CONFIG} $COPY_DIR/$b/${SHORT_EXE}
+         mv $COPY_DIR/$b/${SHORT_EXE} $COPY_DIR/$b/${SHORT_EXE}
       fi
    done
 fi
@@ -138,8 +140,10 @@ if [ "$runFlag" = true ]; then
       for input in "${commands[@]}"; do
          if [[ ${input:0:1} != '#' ]]; then # allow us to comment out lines in the cmd files
             echo "~~~Running ${b}"
-            echo "  ${RUN} ${SHORT_EXE}_base.${CONFIG} ${input}"
-            eval ${RUN} ${SHORT_EXE}_base.${CONFIG} ${input}
+            #echo "  ${RUN} ${SHORT_EXE}_base.${CONFIG} ${input}"
+            echo "  ${RUN} ${SHORT_EXE} ${input}"
+            #eval ${RUN} ${SHORT_EXE}_base.${CONFIG} ${input}
+            eval ${RUN} ${SHORT_EXE} ${input}
          fi
       done
    
