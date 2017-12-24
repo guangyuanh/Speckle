@@ -31,6 +31,19 @@
      would like to run the binaries (e.g., RUN="spike pk" to run on the Spike
      ISA simulator).
 
+**Building RISC-V SPEC**
+
+         ./gen_binaries.sh --compile --copy
+
+   After running this command, you will have two new directories, build and riscv-spec-test.
+   Now let's go to https://github.com/guangyuanh/qsub-fpga for further instructions.
+
+
+** The lower part is from the original author **
+** It could be ignored if you just want to build a Linux image with SPEC**
+
+
+
 
 **To compile binaries**
 

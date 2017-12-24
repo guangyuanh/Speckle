@@ -4,7 +4,8 @@ TARGET_RUN="spike pk -c"
 INPUT_TYPE=test # THIS MUST BE ON LINE 4 for an external sed command to work!
                 # this allows us to externally set the INPUT_TYPE this script will execute
 
-BENCHMARKS=(400.perlbench 401.bzip2 403.gcc 429.mcf 445.gobmk 456.hmmer 458.sjeng 462.libquantum 464.h264ref 471.omnetpp 473.astar 483.xalancbmk)
+#BENCHMARKS=(400.perlbench 401.bzip2 403.gcc 429.mcf 445.gobmk 456.hmmer 458.sjeng 462.libquantum 464.h264ref 471.omnetpp 473.astar 483.xalancbmk)
+BENCHMARKS=(462.libquantum)
 
 base_dir=$PWD
 for b in ${BENCHMARKS[@]}; do
